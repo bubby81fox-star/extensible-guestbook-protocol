@@ -1,0 +1,17 @@
+// In postEntry(), add:
+metadata: {
+  priority: body.includes('!!!')? 'high' : 'normal',
+  ephemeral_ttl: body.includes('/burn') ? 86400 : null // 24h if /burn
+}
+
+// Add this useEffect to auto-delete:
+useEffect(() => {
+  const interval = setInterval(() => {
+    setEntries(prev => prev.filter(e => {
+      if (!e.metadata?.ephemeral_ttl) return true;
+      const age = (Date.now() - new Date(e.created_at)) / 1000;
+      return age < e.metadata.ephemeral_ttl;
+    }));
+  }, 5000);
+  return () => clearInterval(interval);
+}, []);
