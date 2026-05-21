@@ -2,7 +2,7 @@
 **“Notes that outlive the notebook”**
 
 **Status**: Draft  
-**Author**: MacMut <bubby81fox@gmail.com>  
+**Author**: Bubby <bubby81fox@gmail.com>  
 **Created**: 2026-05-19  
 **License**: Public Domain / CC0
 
