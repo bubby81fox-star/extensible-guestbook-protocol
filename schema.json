@@ -1,0 +1,27 @@
+```json
+{
+  "id": "uuid-v4 or timestamp-based",
+  "canonical_url": "hometown.aol.com/~jeff",
+  "aliases": ["web.archive.org/web/19991231/http://hometown.aol.com/~jeff"],
+  "author": {
+    "id": "sha256(email-or-stable-id)",
+    "display_name": "XTBB",
+    "contact": "bubby81fox@gmail.com", // optional
+    "signature": "ed25519:base64..." // optional, see §6
+  },
+  "body": "This page is so 1999 😂",
+  "created_at": "2026-05-19T22:15:00Z",
+  "type": "comment", // comment | poll | ephemeral | reaction | system
+  "metadata": {
+    "priority": "normal", // normal | high - 'fold 3x = urgent'
+    "ephemeral_ttl": null, // seconds until auto-delete, null = permanent
+    "reply_to": "uuid", // for threading/chains
+    "attachments": {
+      "poll": ["yes", "no"] // for 'check yes/no' boxes
+    }
+  },
+  "moderation": {
+    "report_count": 0,
+    "hidden": false
+  }
+}
